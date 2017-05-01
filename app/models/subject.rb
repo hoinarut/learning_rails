@@ -1,5 +1,8 @@
 class Subject < ApplicationRecord
 
+  has_many :pages
+  has_many :sections
+  
   scope :visible, lambda {where(:visible => true)}
   scope :invisible, lambda {where(:visible => false)}
   scope :sorted, lambda {order("position ASC")}
