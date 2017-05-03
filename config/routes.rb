@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
-  get 'subjects/index'
+   
+  root 'demo#index'
 
-  get 'subjects/show'
+  resources :subjects do
+    member do
+      get :delete
+    end
+  end
 
-  get 'subjects/new'
+  get 'demo/index'
+  get 'demo/hello'
+  get 'demo/other_hello'
 
-  get 'subjects/edit'
-
-  get 'subjects/delete'
-
-  #get 'demo/index'
-  #match "ridiculous", :to => "demo#index"
-  root :to => "demo#index"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  match ':controller(/:action(/:id(.:format)))', via: :all
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html  
 end
