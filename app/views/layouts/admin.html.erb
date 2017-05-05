@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple CMS</title>
+    <title>Simple CMS: <%= @page_title || "Admin Area" %></title>
+    <style>
+      span.status { display: block; width: 10px; height: 10px; margin: 0.25em auto;
+      padding: 0; border: 1px solid #000000; }
+      span.status.true { background: green; color: green; }
+      span.status.false { background: red; color: red;  }
+    </style>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
