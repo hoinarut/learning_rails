@@ -1,7 +1,7 @@
 <% @page_title = "All Subjects" %>
 <div class="subjects index">
   <h2>Subjects</h2>
-
+  <%= image_tag('plus_sign.png', :size => '11x11', :alt => 'plus sign') %>
   <%= link_to("Add New Subject", new_subject_path, :class => 'action new') %>
 
   <table class="listing" summary="Subject list">
