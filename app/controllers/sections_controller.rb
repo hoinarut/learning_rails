@@ -1,6 +1,7 @@
 class SectionsController < ApplicationController
   layout 'admin'
-
+  
+  before_action :confirm_logged_in
   before_action :find_pages, :only => [:new, :create, :edit, :update]
   before_action :set_sections_count, :only => [:new, :create, :edit, :update]
 
@@ -35,7 +36,7 @@ class SectionsController < ApplicationController
     if @section.update_attributes(section_params)
       flash[:notice] = "Section updated successfully."
       redirect_to(section_path(@section))
-    else       
+    else
       render('edit')
     end
   end
