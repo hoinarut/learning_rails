@@ -15,7 +15,8 @@ default: &default
   pool: 5
   username: simple_cms
   password: Simple2017!
-  socket: /var/lib/mysql/mysql.sock
+  #socket: /var/lib/mysql/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
