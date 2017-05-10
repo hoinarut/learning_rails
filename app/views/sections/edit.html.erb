@@ -3,7 +3,7 @@
 <div class="sections edit">
   <h2>Update Section</h2>
 
-  <%= form_for(@section) do |f| %>
+  <%= form_for(@section, :url => section_path(@section, :page_id => @page.id)) do |f| %>
 
     <%= render(:partial => 'form', :locals => {:f => f}) %>
 
