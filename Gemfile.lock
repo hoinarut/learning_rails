@@ -38,6 +38,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_list (0.9.5)
+      activerecord (>= 3.0)
     arel (7.1.4)
     bcrypt (3.1.11)
     bcrypt (3.1.11-x64-mingw32)
@@ -163,6 +165,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  acts_as_list
   bcrypt (~> 3.1.11)
   byebug
   coffee-rails (~> 4.2)

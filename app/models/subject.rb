@@ -1,5 +1,7 @@
 class Subject < ApplicationRecord
 
+  acts_as_list
+
   has_many :pages
   has_many :sections
 
@@ -11,5 +13,5 @@ class Subject < ApplicationRecord
 
   validates_presence_of :name
   validates_length_of :name, :maximum => 255
-  
+
 end

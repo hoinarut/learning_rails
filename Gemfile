@@ -37,6 +37,8 @@ else
   gem 'bcrypt', '~> 3.1.11', require: false
 end
 
+gem 'acts_as_list'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
