@@ -14,12 +14,15 @@ class AdminUsersController < ApplicationController
 
   def create
     @admin_user = AdminUser.new(admin_user_params)
-    if @admin_user.save
-      flash[:notice] = 'Admin user created successfully.'
-      redirect_to(admin_users_path)
-    else
-      render('new')
-    end
+    # respond_to do |format|
+      if @admin_user.save
+        flash[:notice] = 'Admin user created successfully.'
+        UserMailer.welcome_email(@admin_user).deliver_later
+        redirect_to(admin_users_path)
+      else
+        render('new')
+      end
+    # end
   end
 
   def edit
